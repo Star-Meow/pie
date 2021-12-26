@@ -32,10 +32,12 @@ x = ["eat", "clothing", "housing", "entertainment", "transportation","balance"]
 y = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]
 colors = ( "#70C1CF", "#FF9900", "#FF4D40", "#006400", "#FFF345", "#75542B")
 explode = (0,0,0,0,0,.1)#炸開
+fig, ax = plt.subplots(figsize = (10, 7))#額外小格子
+ax.legend(expenditure, title ="expenditure", loc ="center left", bbox_to_anchor =(1, 0, 0.5, 1))
+ax.set_title("Expenditure of Month")
 plt.pie(y, labels= x,autopct = "%2.2f%%", colors = colors,shadow = True,explode = explode)
 plt.show()
 
-#ax.legend(expenditure, title ="expenditure", loc ="center left", bbox_to_anchor =(1, 0, 0.5, 1))
 
 
 #import pandas as pd
