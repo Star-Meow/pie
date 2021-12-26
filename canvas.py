@@ -2,7 +2,7 @@ from tkinter import*
 import sys
 
 def angle(n):
-    x = n/allmoney/3600
+    x = (360*n/allmoney)
     print(x)
     return (x)
 
