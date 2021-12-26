@@ -41,10 +41,3 @@ plt.show()
 
 
 #import pandas as pd
-#from tkinter import*
-#screen1 = Tk()
-#screen1.geometry
-#screen1.title("PIE")
-#screen1.config(bg = "white")
-#Label(screen1, text = "PIE", anchor ="n",width = 20, height = 1,).pack()
-#screen1.mainloop()
