@@ -1,5 +1,11 @@
 import sys
+import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
+
+def angel(percent, allvalues):
+    absolute = int((percent) / 100.*np.sum(allvalues)+0.5)
+    return "{:.2f}%\n({:d})".format(percent, absolute)
 
 if __name__ == "__main__":
     if len(sys.argv) > 0: 
@@ -27,17 +33,17 @@ if __name__ == "__main__":
             break
 
 
-expenditure = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]#支出內容
 x = ["eat", "clothing", "housing", "entertainment", "transportation","balance"]
 y = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]
 colors = ( "#70C1CF", "#FF9900", "#FF4D40", "#006400", "#FFF345", "#75542B")
 explode = (0,0,0,0,0,.1)#炸開
-fig, ax = plt.subplots(figsize = (10, 7))#額外小格子
-ax.legend(expenditure, title ="expenditure", loc ="center left", bbox_to_anchor =(1, 0, 0.5, 1))
+expenditure = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]#支出內容
+
+fig, ax = plt.subplots(figsize = (10, 7))
+
 ax.set_title("Expenditure of Month")
-plt.pie(y, labels= x,autopct = "%2.2f%%", colors = colors,shadow = True,explode = explode)
+ax.pie(y, labels= x,autopct = lambda percent:angel(percent, expenditure), startangle = 90, colors = colors,shadow = True,explode = explode)
 plt.show()
 
 
 
-#import pandas as pd
