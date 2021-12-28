@@ -13,7 +13,7 @@ if __name__ == "__main__":
             allmoney = int(input("請輸入總金額"":"))
             balance = 0
             print("按照食衣住樂行輸入金額"":")
-            for i in range(5):
+            for i in range(6):
                 if i == 0:
                     print("請輸入食的金額"":")
                     eatm = int(input())
@@ -29,15 +29,18 @@ if __name__ == "__main__":
                 elif i == 4:
                     print("請輸入行的金額"":")
                     transportationm = int(input())
-            balance = (allmoney - eatm -clothingm -housingm - entertainmentm - transportationm)
+                elif i == 5:
+                    print("請輸入育的金額"":")
+                    educationm = int(input())
+            balance = (allmoney - eatm -clothingm -housingm - entertainmentm - transportationm - educationm)
             break
 
 
-x = ["eat", "clothing", "housing", "entertainment", "transportation","balance"]
-y = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]
-colors = ( "#70C1CF", "#FF9900", "#FF4D40", "#006400", "#FFF345", "#75542B")
-explode = (0,0,0,0,0,.1)#炸開
-expenditure = [eatm, clothingm, housingm, entertainmentm, transportationm, balance]#支出內容
+x = ["eat", "clothing", "housing", "entertainment", "transportation", "educationm", "balance"]
+y = [eatm, clothingm, housingm, entertainmentm, transportationm, educationm, balance]
+colors = ( "#70C1CF", "#FF9900", "#FF4D40", "#006400", "#FFF345","#FFDBAC", "#75542B")
+explode = (0,0,0,0,0,0,.1)
+expenditure = [eatm, clothingm, housingm, entertainmentm, transportationm, educationm, balance]#支出內容
 
 fig, ax = plt.subplots(figsize = (10, 7))
 
